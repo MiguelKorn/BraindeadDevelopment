@@ -1,3 +1,17 @@
+<?php
+require './utils/PHPMailer/Mailer.php';
+require './utils/settings.php';
+
+$toAddress = $_POST['toAddress'];
+$toName = $_POST['toName'];
+
+$subject = $_POST['subject'];
+$body = $_POST['body'];
+
+$mailer = new Mailer(FROM_NAME, FROM_MAIL, FROM_PASS, $toAddress, $toName, $subject, $body);
+
+//$mailer->sendMail();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +54,7 @@
         <div class="container-fluid">
             <div class="row">
                 <h1>IT'S DEAD SIMPLE</h1>
+                <iframe src="" frameborder="0">test</iframe>
             </div>
         </div>
     </div>
@@ -51,6 +66,10 @@
     </div>
     <div id="contact">
         <h3>contact</h3>
+        <form action="">
+            <input type="text">
+            <input type="email">
+        </form>
     </div>
 </div>
 <div id="footer">
