@@ -1,3 +1,9 @@
+<?php
+    if (isset($_POST["submit"])) {
+    $name = $_POST["name"];
+    echo $name;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,87 +22,89 @@
 <body>
 
 <div id="formContainer" class="mx-auto" style="width: 200px; height: 30px;">
+    <form method="post">
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="firstName">First Name </label>
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name">
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="lastName">Last Name </label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name">
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="email">Email </label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter your school email">
+                    <input type="text" class="form-control" name="email" placeholder="Enter your school email">
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="date">Date of Birth </label>
-                    <input type="text" class="form-control" id="date" placeholder="Date of Birth">
+                    <input type="text" class="form-control" name="date" placeholder="Date of Birth">
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="class">Class</label>
-                    <select class="form-control" id="class">
+                    <select class="form-control" name="class">
                         <option>MD2A</option>
                         <option>MD2B</option>
                     </select>
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="type">Type Developer</label>
-                <select class="form-control" id="type">
+                <select class="form-control" name="type">
                     <option>Front-End</option>
                     <option>Back-End</option>
                     <option>Full Stack</option>
                 </select>
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="motivation">Motivation</label>
-                    <textarea class="form-control" id="motivation" cols="6" rows="12">
+                    <textarea class="form-control" name="motivation" cols="6" rows="12">
                     </textarea>
             </div>
-        </form>
+        
     </div>
 
     <div class="card-body">
-        <form>
-            <div class="form-group" id="">
+        
+            <div class="form-group">
                 <label for="lastName">
-                    <input type="text" class="form-control" id="lastName">
+                    <input type="text" class="form-control" name="lastName">
                 </label>
             </div>
-        </form>
+        
     </div>
-
+        <input type="submit" name="submit" value="Send">
+    </form>
     </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
