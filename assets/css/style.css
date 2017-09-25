@@ -1,0 +1,30 @@
+body {
+    position: relative;
+    padding-top: 56px;
+}
+
+nav {
+    background-color: #19957C;
+}
+
+#nav {
+    background-color: #19957C;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #19957C transparent transparent transparent;
+}
+
+#content {
+}
+
+#container1 {
+    background-color: #1ABC9C;
+}
+
+#content>div {
+    height: calc(100vh);
+}
