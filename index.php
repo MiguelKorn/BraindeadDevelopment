@@ -1,16 +1,21 @@
 <?php
 require './utils/PHPMailer/Mailer.php';
 require './utils/settings.php';
+require './utils/Sanitize/sanitize.inc.php';
 
-$toAddress = $_POST['toAddress'];
-$toName = $_POST['toName'];
+if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
+    $name = sanitize($_POST["name"], HTML);
+    $email = sanitize($_POST["email"], HTML);
+    $subject = sanitize($_POST["subject"], HTML);
+    $message = sanitize($_POST["message"], HTML);
 
-$subject = $_POST['subject'];
-$body = $_POST['body'];
-
-$mailer = new Mailer(FROM_NAME, FROM_MAIL, FROM_PASS, $toAddress, $toName, $subject, $body);
-
-//$mailer->sendMail();
+    $mailer = new Mailer(FROM_MAIL, FROM_PASS);
+    $mailer->setMailFrom(FROM_MAIL, FROM_NAME);
+    $mailer->setMailTo($email, $name);
+    $mailer->setSubject('subject');
+    $mailer->setBody('body'); // can be html
+    $mailSend = $mailer->sendMail();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +27,18 @@ $mailer = new Mailer(FROM_NAME, FROM_MAIL, FROM_PASS, $toAddress, $toName, $subj
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Braindead Development | Portfolio</title>
 </head>
 <body>
+<?php
+if(isset($mailSend) && $mailSend){
+    echo 'mailsend';
+}
+?>
 <div id="nav">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-light fixed-top">
@@ -39,7 +50,7 @@ $mailer = new Mailer(FROM_NAME, FROM_MAIL, FROM_PASS, $toAddress, $toName, $subj
             <div class="collapse navbar-collapse" id="menu">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="#container1">Home <span
-                            class="sr-only">(current)</span></a>
+                                class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#about">About</a>
                     <a class="nav-item nav-link" href="#projects">Projects</a>
                     <a class="nav-item nav-link" href="#contact">Contact</a>
@@ -66,9 +77,20 @@ $mailer = new Mailer(FROM_NAME, FROM_MAIL, FROM_PASS, $toAddress, $toName, $subj
     </div>
     <div id="contact">
         <h3>contact</h3>
-        <form action="">
-            <input type="text">
-            <input type="email">
+        <form method="POST">
+            <label>
+                <input type="text" name="name" placeholder="Name" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Email" required>
+            </label>
+            <label>
+                <input type="text" name="subject" placeholder="Subject" required>
+            </label>
+            <label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+            </label>
+            <input type="submit" name="submit" value="Send">
         </form>
     </div>
 </div>
