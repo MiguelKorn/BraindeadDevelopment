@@ -35,8 +35,8 @@ if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
 </head>
 <body>
 <?php
-if(isset($mailSend) && $mailSend){
-    echo 'mailsend';
+if (isset($mailSend) && $mailSend) {
+    echo $mailSend;
 }
 ?>
 <div id="nav">
@@ -76,26 +76,40 @@ if(isset($mailSend) && $mailSend){
         <h3>projects</h3>
     </div>
     <div id="contact">
-        <h3>contact</h3>
-        <form method="POST">
-            <label>
-                <input type="text" name="name" placeholder="Name" required>
-            </label>
-            <label>
-                <input type="email" name="email" placeholder="Email" required>
-            </label>
-            <label>
-                <input type="text" name="subject" placeholder="Subject" required>
-            </label>
-            <label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
-            </label>
-            <input type="submit" name="submit" value="Send">
-        </form>
+        <div class="container-fluid">
+            <div class="row contact-form align-items-center">
+                <div class="col-md-6">
+                    <h3>Contact</h3>
+                    <form method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                        <textarea class="form-control" name="message" id="message" cols="30" rows="10"
+                                  placeholder="Message"
+                                  required></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-outline-success" name="submit" value="Send">
+                    </form>
+                </div>
+                <div class="col-md-6" style="text-align: right">
+                    <h1>IT'S OK TO</h1>
+                    <h1>ASK QUESTIONS</h1>
+                </div>
+            </div>
+            <div class="row footer">
+                <div class="col-md-12">
+                    <h3>Footer</h3>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div id="footer">
-    <h3>footer</h3>
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -111,5 +125,6 @@ if(isset($mailSend) && $mailSend){
 <!-- Custom JS-->
 <script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/triangle.js"></script>
+<script src="assets/js/footer.js"></script>
 </body>
 </html>

@@ -26,5 +26,19 @@ nav {
 }
 
 #content>div {
-    height: calc(100vh);
+    height: calc(100vh - 56px);
+}
+
+.container-fluid {
+
+}
+
+.contact-form {
+    padding: 15px 0;
+}
+
+.footer {
+    flex: 1 1 auto;
+    background-color: #264358;
+    color: white;
 }
