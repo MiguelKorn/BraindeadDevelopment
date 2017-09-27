@@ -1,7 +1,10 @@
 <?php
+    var_dump($_POST);
+    var_dump($_REQUEST);
+    echo $_SERVER["REQUEST_METHOD"];
+
     if (isset($_POST["submit"])) {
-    $name = $_POST["name"];
-    echo $name;
+    echo $_POST["firstName"];
     }
 ?>
 <!DOCTYPE html>
@@ -22,7 +25,7 @@
 <body>
 
 <div id="formContainer" class="mx-auto" style="width: 200px; height: 30px;">
-    <form method="post">
+    <form  action="" method="post">
     <div class="card-body">
         
             <div class="form-group">
