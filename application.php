@@ -1,8 +1,34 @@
 <?php
+   // var_dump($_POST);
+    //var_dump($_REQUEST);
+    //echo $_SERVER["REQUEST_METHOD"];
+require './utils/PHPMailer/Mailer.php';
+require './utils/settings.php';
+require './utils/Sanitize/sanitize.inc.php';
+
     if (isset($_POST["submit"])) {
-    $name = $_POST["name"];
-    echo $name;
+    echo $_POST["firstName"];
     }
+
+
+
+if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
+    $firstName = sanitize($_POST["firstName"], HTML);
+    $lastName = sanitize($_POST["lastName"], HTML);
+    $email = sanitize($_POST["email"], HTML);
+    $date = sanitize($_POST["date"], HTML);
+    $class = sanitize($_POST["class"], HTML);
+    $type = sanitize($_POST["type"], HTML);
+    $motivation = sanitize($_POST["motivation"], HTML);
+
+    $mailer = new Mailer(FROM_MAIL, FROM_PASS);
+    $mailer->setMailFrom(FROM_MAIL, FROM_NAME);
+    $mailer->setMailTo(FROM_MAIL, FROM_NAME);
+    $mailer->setSubject('subject');
+    $mailer->setBody('body'); // can be html
+//$mailSend = $mailer->sendMail();
+    echo $mailer->sendMail();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +48,7 @@
 <body>
 
 <div id="formContainer" class="mx-auto" style="width: 200px; height: 30px;">
-    <form method="post">
+    <form  action="" method="post">
     <div class="card-body">
         
             <div class="form-group">
@@ -94,15 +120,7 @@
         
     </div>
 
-    <div class="card-body">
-        
-            <div class="form-group">
-                <label for="lastName">
-                    <input type="text" class="form-control" name="lastName">
-                </label>
-            </div>
-        
-    </div>
+
         <input type="submit" name="submit" value="Send">
     </form>
     </div>
