@@ -18,7 +18,7 @@ class Mailer
         //Server settings
         $this->mail->SMTPDebug = 2;                                   // Enable verbose debug output (0 = production)
         $this->mail->isSMTP();                                        // Set mailer to use SMTP
-        $this->mail->Host = 'smtp.gmail.com';                         // Specify main and backup SMTP servers
+        $this->mail->Host = 'mail.braindeaddevelopment.nl';                         // Specify main and backup SMTP servers
         $this->mail->SMTPAuth = true;                                 // Enable SMTP authentication
         $this->mail->Username = $smtpUsername;                        // SMTP username
         $this->mail->Password = $smtpPassword;                        // SMTP password

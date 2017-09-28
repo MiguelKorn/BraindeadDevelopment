@@ -11,6 +11,10 @@ nav {
     background-color: #19957C;
 }
 
+.center {
+    text-align: center;
+}
+
 .triangle {
     width: 0;
     height: 0;
@@ -18,27 +22,51 @@ nav {
     border-color: #19957C transparent transparent transparent;
 }
 
-#content {
+.slogan>span {
+    display: block;
+    color: white;
 }
 
-#container1 {
-    background-color: #1ABC9C;
+.slogan>span:nth-child(1) {
+    font-size: calc(100% + 7vw);
 }
 
-#content>div {
-    height: calc(100vh - 56px);
+.slogan>span:nth-child(2) {
+    font-size: calc(100% + 4vw);
 }
 
-.container-fluid {
-
+.slogan>span:nth-child(3) {
+    font-size: calc(100% + 2vw);
 }
 
-.contact-form {
+.home-img {
+    max-width: 100%;
+}
+
+#about, #projects, #contact {
     padding: 15px 0;
 }
 
+#home {
+    background-color: #1ABC9C;
+    text-align: center;
+}
+
+/* #about, #projects */
+#home {
+    height: calc(100vh - 56px);
+}
+
+#projects {
+    background-color: #D3D3D3;
+}
+
 .footer {
-    flex: 1 1 auto;
+    min-height: 150px;
     background-color: #264358;
     color: white;
+}
+
+.logo {
+    width: 2em;
 }

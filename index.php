@@ -40,43 +40,140 @@ if (isset($mailSend) && $mailSend) {
 }
 ?>
 <div id="nav">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top">
-            <a class="navbar-brand" href="#">Braindead</a>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="./assets/images/logo.png" alt="BraindeadLogo">
+                Braindead
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
                     aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="#container1">Home <span
+                    <a class="nav-item nav-link active" href="#home">Home <span
                                 class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#about">About</a>
                     <a class="nav-item nav-link" href="#projects">Projects</a>
                     <a class="nav-item nav-link" href="#contact">Contact</a>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 </div>
 <div id="content">
-    <div id="container1">
+    <div id="home">
         <div class="triangle" id="triangle"></div>
-        <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <div class="alert alert-warning center" role="alert">
+                        We are looking for people to join our team. apply <a href="application.php">here</a>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <h1>IT'S DEAD SIMPLE</h1>
-                <iframe src="" frameborder="0">test</iframe>
+                <div class="col-md-6">
+                    <h1 class="slogan">
+                        <span>IT'S</span>
+                        <span>DEAD</span>
+                        <span>SIMPLE</span>
+                    </h1>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/images/good.png" class="home-img" alt="good">
+                    <iframe src="" frameborder="0">test</iframe>
+                </div>
             </div>
         </div>
     </div>
     <div id="about">
-        <h3>About</h3>
+        <div class="container">
+            <div class="row about-text">
+                <div class="col-md-6">
+                    <h3>About</h3>
+                    <p>Braindead Development is a young startup company made by
+                        4 students, with a team consisting of a designer,
+                        a senior developer and 2 junior developers. Our work
+                        consists of making advanced websites, content management systems
+                        and applications, both native apps and games.</p>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Mauro Farnese</h4>
+                                <h6 class="card-subtitle mb-2 text-muted center">Designer</h6>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Naömi Morales Vasquez</h4>
+                                <h6 class="card-subtitle mb-2 text-muted center">Front-end Developer</h6>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Miguel Korn</h4>
+                                <h6 class="card-subtitle mb-2 text-muted center">Back-end Developer</h6>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Jesse Bijma</h4>
+                                <h6 class="card-subtitle mb-2 text-muted center">Back-end Developer</h6>
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="projects">
-        <h3>projects</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Projects</h3>
+                </div>
+<!--                <div class="col-md-12">-->
+<!--                    <div class="card-columns">-->
+<!--                        <div class="card">-->
+<!--                            <img class="card-img" src="..." alt="Card image">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img class="card-img" src="..." alt="Card image">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img class="card-img" src="..." alt="Card image">-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <img class="card-img" src="..." alt="Card image">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
     </div>
     <div id="contact">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row contact-form align-items-center">
                 <div class="col-md-6">
                     <h3>Contact</h3>
@@ -103,11 +200,17 @@ if (isset($mailSend) && $mailSend) {
                     <h1>ASK QUESTIONS</h1>
                 </div>
             </div>
-            <div class="row footer">
-                <div class="col-md-12">
-                    <h3>Footer</h3>
-                </div>
-            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="./assets/images/logo.png" alt="BraindeadLogo">
+                BRAINDEAD
+            </a>
+            <p>&copy; BraindeadDevelopment | 2017</p>
         </div>
     </div>
 </div>
@@ -125,6 +228,5 @@ if (isset($mailSend) && $mailSend) {
 <!-- Custom JS-->
 <script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/triangle.js"></script>
-<script src="assets/js/footer.js"></script>
 </body>
 </html>

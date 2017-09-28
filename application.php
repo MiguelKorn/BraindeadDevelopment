@@ -1,16 +1,7 @@
 <?php
-   // var_dump($_POST);
-    //var_dump($_REQUEST);
-    //echo $_SERVER["REQUEST_METHOD"];
 require './utils/PHPMailer/Mailer.php';
 require './utils/settings.php';
 require './utils/Sanitize/sanitize.inc.php';
-
-    if (isset($_POST["submit"])) {
-    echo $_POST["firstName"];
-    }
-
-
 
 if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
     $firstName = sanitize($_POST["firstName"], HTML);
@@ -48,57 +39,57 @@ if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
 <body>
 
 <div id="formContainer" class="mx-auto" style="width: 200px; height: 30px;">
-    <form  action="" method="post">
-    <div class="card-body">
-        
+    <form action="" method="post">
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="firstName">First Name </label>
-                    <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                <input type="text" class="form-control" name="firstName" placeholder="First Name">
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="lastName">Last Name </label>
-                    <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+                <input type="text" class="form-control" name="lastName" placeholder="Last Name">
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="email">Email </label>
-                    <input type="text" class="form-control" name="email" placeholder="Enter your school email">
+                <input type="text" class="form-control" name="email" placeholder="Enter your school email">
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="date">Date of Birth </label>
-                    <input type="text" class="form-control" name="date" placeholder="Date of Birth">
+                <input type="text" class="form-control" name="date" placeholder="Date of Birth">
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="class">Class</label>
-                    <select class="form-control" name="class">
-                        <option>MD2A</option>
-                        <option>MD2B</option>
-                    </select>
+                <select class="form-control" name="class">
+                    <option>MD2A</option>
+                    <option>MD2B</option>
+                </select>
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="type">Type Developer</label>
                 <select class="form-control" name="type">
@@ -107,23 +98,23 @@ if (isset($_POST["submit"]) && $_POST["submit"] === "Send") {
                     <option>Full Stack</option>
                 </select>
             </div>
-        
-    </div>
 
-    <div class="card-body">
-        
+        </div>
+
+        <div class="card-body">
+
             <div class="form-group">
                 <label for="motivation">Motivation</label>
-                    <textarea class="form-control" name="motivation" cols="6" rows="12">
+                <textarea class="form-control" name="motivation" cols="6" rows="12">
                     </textarea>
             </div>
-        
-    </div>
+
+        </div>
 
 
         <input type="submit" name="submit" value="Send">
     </form>
-    </div>
+</div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
